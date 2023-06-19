@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+			font-family: 'Pacifico', cursive;
+			background-image: url("static/background.avif");
+			background-size: cover;
+			background-color: white; /* Fallback color in case the image fails to load */
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 40px;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			font-weight: bold;
+			font-style: italic;
+		}
+        form {
+        text-align: center;
+      }
+
+      input[type="text"],
+      input[type="date"] {
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        background-color: white ;
+        outline: 2px solid #000; 
+      }
+
+      input[type="submit"] {
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-left: 30px; /* Adjust the margin as needed */
+        margin-bottom: 200px;
+        margin-top: 20px;
+        display: inline-block; /* Display the button inline */
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>  
+</head>
+<body>
+
+    <h1>Panini Pande (1002064144)</h1>
+	<h1>Cloud Computing Assignment 2</h1>
+    
+	<div>
+        <form method="POST" action="/delete_record" >
+			Enter the city name: <input type = "text" name = "city" />
+            Enter the state name: <input type = "text" name = "state" />
+            <br><br>
+			<input type = "submit" value="Delete" name = "Delete"/>
+		 </form>
+        </div> 
+</body>
+</html>

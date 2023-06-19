@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font-family: "Pacifico", cursive;
+        background-image: url("static/background.avif");
+        background-size: cover;
+        background-color: white;
+      }
+      h1 {
+        text-align: center;
+      }
+      div {
+        text-align: center;
+      }
+      table {
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+      form {
+        text-align: center;
+      }
+
+      input[type="text"],
+      input[type="date"] {
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        background-color: white ;
+        outline: 2px solid #000; 
+      }
+
+      input[type="submit"] {
+        padding: 10px;
+        border: none;
+        border-radius: 20px;
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-left: 30px; /* Adjust the margin as needed */
+        margin-bottom: 200px;
+        margin-top: 20px;
+        display: inline-block; /* Display the button inline */
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body style="background-color: #a0d2eb">
+    <h1>Panini Pande(1002064144)</h1>
+    <h1>Cloud Computing Assignment 2</h1>
+    <!-- <div style="text-align: center;"><img style="height: 200px; width: auto; text-align: center;" src="./static/yn.jpg" alt="Image Not Found"></div> -->
+
+    <br /><br />
+    {% if error %}
+    <p class="">{{ error }}</p>
+    {% endif %} {% if temp == 1 %}
+    <div class="form-group">
+      <form action="/mag" method="POST">
+        {{ form.csrf_token() }} {{ form.mag.label }} {{ form.mag }}<br />
+        {{ form.submit }}
+      </form>
+    </div>
+    {% endif %} {% if temp == 0 %}
+    <p class="">Total Records: {{ cnt }}</p>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-hover table-fixed table-wrap">
+        <caption>
+          Earthquake Records
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Time</th>
+            <th scope="col">Latitude</th>
+            <th scope="col">Longitude</th>
+            <th scope="col">Depth</th>
+            <th scope="col">MAG</th>
+            <th scope="col">MAG_Type</th>
+            <th scope="col">NST</th>
+            <th scope="col">GAP</th>
+            <th scope="col">D_min</th>
+            <th scope="col">RMS</th>
+            <th scope="col">NET</th>
+            <th scope="col">ID</th>
+            <th scope="col">Updated</th>
+            <th scope="col">Place</th>
+            <th scope="col">Type</th>
+            <th scope="col">Horizontal_Error</th>
+            <th scope="col">Depth_Error</th>
+            <th scope="col">MAG_Error</th>
+            <th scope="col">MAG_NST</th>
+            <th scope="col">Status</th>
+            <th scope="col">Location_Source</th>
+            <th scope="col">MAG_Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in output %}
+          <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
+            <td>{{ row[7] }}</td>
+            <td>{{ row[8] }}</td>
+            <td>{{ row[9] }}</td>
+            <td>{{ row[10] }}</td>
+            <td>{{ row[11] }}</td>
+            <td>{{ row[12] }}</td>
+            <td>{{ row[13] }}</td>
+            <td>{{ row[14] }}</td>
+            <td>{{ row[15] }}</td>
+            <td>{{ row[16] }}</td>
+            <td>{{ row[17] }}</td>
+            <td>{{ row[18] }}</td>
+            <td>{{ row[19] }}</td>
+            <td>{{ row[20] }}</td>
+            <td>{{ row[21] }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+  </body>
+</html>

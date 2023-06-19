@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+   <head>
+      <style>
+      body {
+			font-family: 'Pacifico', cursive;
+			background-image: url("static/background.avif");
+			background-size: cover;
+			background-color: white; /* Fallback color in case the image fails to load */
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 40px;
+		}
+
+		table {
+			border-collapse: collapse;
+			margin: 40px auto;
+		}
+
+		th,
+		td {
+			border: 1px solid black;
+			padding: 16px;
+			text-align: center;
+		}
+
+		a {
+			text-decoration: none;
+			color: black;
+			font-weight: bold;
+			font-style: italic;
+		}
+      </style>
+      </head>
+      <body>
+        <h1>Panini Pande (1002064144)</h1>
+        <h1>Cloud Computing Assignment 2</h1>
+        
+           
+         {% if rows %}
+      <table id='customers'>
+        <!-- <tr>
+            <td><b>Name</b></td>
+            <td><b>State</b></td>
+            <td><b>Salary</b></td>
+            <td><b>Grade</b></td>
+            <td><b>Room</b></td>
+            <td><b>Telnum</b></td>
+            <td><b>Image Name</b></td> 
+            <td><b>Image</b></td> 
+            <td><b>Keywords</b></td> 
+         </tr> -->
+         <tr>
+            <td><b>city</b></td>
+            <td><b>state</b></td>
+            <td><b>population</b></td>
+            <td><b>lat</b></td>
+            <td><b>lon</b></td>
+            <!-- <td><b>Place</b></td>  -->
+         </tr>   
+         {% for col in rows %}
+         <!--<tr>
+            <td>{{col[0]}}</td>
+            <td>{{col[1]}}</td>
+            <td> {{ col[2]}}</td>
+            <td>{{col[3]}}</td>
+            <td> {{col[4]}}</td>
+            <td>{{col[5]}}</td>
+            <td>{{col[6]}}</td>
+            <td><img style="height: 150px"  src="static/{{col[6]}}" alt="No Image Found"></td> 
+            <td>{{col[7]}}</td> 
+         </tr> -->
+         <tr>
+            <td>{{ col[0] }}</td>
+            <td>{{ col[1] }}</td>
+            <td>{{ col[2] }}</td>
+            <td>{{ col[3] }}</td>
+            <td>{{ col[4] }}</td>
+            <!-- <td>{{ col[13] }}</td> -->
+         </tr>
+         {% endfor %}
+      </table>
+      {% else %}
+         <p>No Matching</p>
+         {% endif %}
+</div>
+      <br>
+     
+   </body>
+</html>
